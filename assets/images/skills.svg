@@ -1,0 +1,173 @@
+<svg width="800" height="70" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="textGradientGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:var(--color-gradient-start)" />
+            <stop offset="100%" style="stop-color:var(--color-gradient-end)" />
+        </linearGradient>
+    </defs>
+    <style>
+        :root {
+            color-scheme: light dark;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+            /* Определение цветовых переменных */
+            --color-stroke: #b3bbc2;
+            --color-fill: #1f2328;
+            --color-text: #9AA2AE;
+            --color-muted: #9AA2AE;
+            --color-progress-bg: #9AA2AE;
+            --color-gradient-start: #698955;
+            --color-gradient-end: #698955;
+        }
+
+        /* Темная тема */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-stroke: #3D444D;
+                --color-fill: #1f2328;
+                --color-text: #9AA2AE;
+                --color-muted: #9198a1;
+                --color-progress-bg: #1A1A1A;
+            }
+        }
+
+        /* Светлая тема */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --color-stroke: #b3bbc2;
+                --color-fill: #e6edf3;
+            }
+        }
+
+        .theme-stroke-adapt {
+            stroke: var(--color-stroke);
+        }
+
+        .theme-fill-adapt {
+            fill: var(--color-fill);
+        }
+
+        html[data-color-mode="dark"] .theme-fill-adapt {
+            fill: var(--color-fill);
+        }
+
+        html[data-color-mode="light"] .theme-fill-adapt {
+            fill: var(--color-fill);
+        }
+
+        .skill-title {
+            font-size: 14px;
+            fill: var(--color-text);
+            font-weight: 500;
+        }
+
+        .skill-percent {
+            font-size: 14px;
+            fill: var(--color-muted);
+            font-weight: 300;
+        }
+
+        .skill-progress-bg {
+            fill: var(--color-progress-bg);
+            rx: 3px;
+            ry: 3px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .skill-title {
+                fill: #e6edf3;
+            }
+
+            .skill-percent {
+                fill: #9198a1;
+            }
+
+            .skill-progress-bg {
+                fill: #1A1A1A;
+            }
+        }
+
+        @keyframes progress-automation {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 442;
+            }
+        }
+
+        @keyframes progress-rest-api {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 364;
+            }
+        }
+
+        @keyframes progress-telegram-bots {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 468;
+            }
+        }
+
+        .skill-progress-fill {
+            fill: url(#textGradientGreen);
+            rx: 5px;
+            ry: 5px;
+        }
+
+        .skill-progress-fill-automation {
+            animation: progress-automation 1s ease forwards;
+        }
+
+        .skill-progress-fill-rest-api {
+            animation: progress-rest-api 1s ease forwards;
+        }
+
+        .skill-progress-fill-telegram-bots {
+            animation: progress-telegram-bots 1s ease forwards;
+        }
+    </style>
+
+    <g class="skills-list">
+        <!-- Automation Programs 85% -->
+        <g transform="translate(0,0)">
+            <text x="0" y="15" class="skill-title">Automation Programs</text>
+
+            <g class="title-wrapper">
+                <rect x="180" y="5" width="520" height="10" class="skill-progress-bg" />
+                <rect x="180" y="5" width="442" height="10"
+                    class="skill-progress-fill skill-progress-fill-automation" />
+                <text x="720" y="15" class="skill-percent">85%</text>
+            </g>
+        </g>
+
+        <!-- REST API 70% -->
+        <g transform="translate(0,26)">
+            <g class="title-wrapper">
+                <text x="0" y="15" class="skill-title">REST API</text>
+                <rect x="180" y="5" width="520" height="10" class="skill-progress-bg" />
+                <rect x="180" y="5" width="364" height="10" class="skill-progress-fill skill-progress-fill-rest-api" />
+                <text x="720" y="15" class="skill-percent">70%</text>
+            </g>
+        </g>
+
+        <!-- Telegram Bots 90% -->
+        <g transform="translate(0,52)">
+            <g class="title-wrapper">
+                <text x="0" y="15" class="skill-title">Telegram Bots</text>
+                <rect x="180" y="5" width="520" height="10" class="skill-progress-bg" />
+                <rect x="180" y="5" width="468" height="10"
+                    class="skill-progress-fill skill-progress-fill-telegram-bots" />
+                <text x="720" y="15" class="skill-percent">90%</text>
+            </g>
+        </g>
+    </g>
+</svg>
